@@ -1,0 +1,96 @@
+<h1>Account View</h1>
+             
+<h2 class="nicetitle">My Bills
+	<small>Bills you have created</small></h2>  
+	
+<% if @bills.empty? %>  
+	<em>You have not created any bills yet. <%= link_to "Create one now", :controller => 'bills', :action => 'new' %>.</em>
+<% else %>
+    <table width="100%">
+
+	<% @bills.each do |bill| %>
+		<% cv = bill.current_version %>
+		<tr>    
+			<td><%= link_to image_tag("icons/script_edit.png", :border => 0), :action => 'bill_edit', :id => bill %></td>
+			<td>B<%= bill.id %></td>
+			<td nowrap><strong><%= link_to cv.title, :controller => 'bills', :action => 'show', :id => bill %></strong></td>
+			<td><em><%= truncate cv.billtext %></em></td>           
+			<td><%= bill.bill_versions.size %> versions</td>           
+			<td><%= time_ago_in_words cv.created_at %> ago</td>
+		</tr>  
+		<tr>
+			<td></td>   
+			<td></td>
+			<td colspan="3">  
+				<% if !bill.pending_bill_versions.empty? %>    
+
+				<div class="light">Suggested Revisions:</div>  
+				<div class="textbox">                
+					<table class="accountview">
+					<% bill.pending_bill_versions.reverse.each do |bv| %>
+					<tr>    
+						<td><%= link_to 'p.' + bv.id.to_s, :action => 'review_revision', :id => bv %></td>
+						<td><%= time_ago_in_words(bv.created_at) + ' ago' rescue nil %></td>
+						<td><div class="measurebar"><div class="measure" style="width:<%= bv.change_level_normal %>px">&nbsp;</div></td>
+					</tr>
+					<% end %>  
+				    </table>
+				</div>
+				
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+	</table>
+<% end %>	
+         
+<br clear="all"/>
+
+<h2 class="nicetitle">Sponsored Bills
+	<small>Bills you think should be laws, too</small></h2>
+<% if @sponsored.empty? %>  
+	<em>You have not sponsored any bills yet</em>
+<% else %>
+    <table class="short" width="100%">  
+		<tr>
+		<th>Title</th>
+		<th>Preview</th>
+		<th>When</th>
+		</tr>    
+	<% @sponsored.each do |bill| %>
+		<% cv = bill.current_version %>
+		<tr>    
+			<td nowrap><%= link_to cv.title, :controller => 'bills', :action => 'show', :id => bill %></td>
+			<td><em class="small"><%= truncate cv.billtext, 60 %></em></td>           
+			<td><%= time_ago_in_words cv.created_at %> ago</td>
+		</tr>   
+	<% end %>
+	</table>
+<% end %>       
+
+	<br clear="all"/>
+
+<h2 class="nicetitle">Bill Version Changes 
+	<small>Suggested changes you have submitted to others bills</small></h2>  
+   
+<% if @versions.empty? %>
+  <em>You have not suggested any bill changes yet</em>
+<% else %>
+	<table id="billversions" width="100%">         
+		<tr>    
+	   		<th colspan="2">Status</th>
+			<th>Title</th>
+			<th>When</th>
+			<th>Change Level</th>
+		</tr>
+	<% @versions.each do |bv| %>
+		<tr class="<%= bv.status %>">    
+			<td><%= status_icon bv.status %></td>
+			<td><%= bv.status %></td>
+			<td><%= link_to bv.title, :controller => 'bills', :action => 'view_revision', :id => bv %></td>
+			<td><%= time_ago_in_words(bv.created_at) + ' ago' rescue nil %></td>
+			<td><div class="measurebar"><div class="measure" style="width:<%= bv.change_level_normal %>px">&nbsp;</div></td>
+		</tr>                           
+	<% end %>         
+	</table>
+<% end %>

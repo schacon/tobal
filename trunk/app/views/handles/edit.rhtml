@@ -1,0 +1,9 @@
+<h1>Editing handle</h1>
+
+<%= start_form_tag :action => 'update', :id => @handle %>
+  <%= render_partial 'form' %>
+  <%= submit_tag 'Edit' %>
+<%= end_form_tag %>
+
+<%= link_to 'Show', :action => 'show', :id => @handle %> |
+<%= link_to 'Back', :action => 'list' %>

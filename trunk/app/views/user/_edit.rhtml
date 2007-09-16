@@ -1,0 +1,28 @@
+<div class="user_edit">
+  <%= form_input :hidden_field, 'form', :value => 'edit' %>
+
+  <table>     
+	<tr>
+		<td>Name</td><td><%= text_field :user, :name %></td>       
+	</tr><tr>
+		<td>Email</td><td><%= text_field :user, :email %></td>
+	</tr>
+  </table>
+  <br/>
+                   
+	<div class="textbox">
+		At some point we'll try to match you up to any politicians who sign up with the site that represent you in the real world.  If you fill out your address information, we can figure out who they are.
+	</div>
+	<br/>
+	
+  <table>     
+	<tr><td>Street</td><td><%= text_field :user, :street1 %></td></tr>
+	<tr><td>City</td><td><%= text_field :user, :city %></td></tr>
+	<tr><td>State</td><td><%= text_field :user, :state, :size => 2 %></td></tr>
+	<tr><td>Zip Code</td><td><%= text_field :user, :zip_code,:size => 10 %></td></tr>
+
+    <% if submit %>
+      <%= form_input :submit_button, user.new_record? ? 'signup' : 'change_settings', :class => 'two_columns' %>
+    <% end %>
+  </table>
+</div>

@@ -1,0 +1,17 @@
+<div class="user">
+<h2><%= user.firstname %> <%= user.lastname %></h2>
+<h3><%= user.login %></h3>
+<%= user.email %><br/>
+<%= image_tag_n url_for_file_column("user", "image_small") rescue nil %>
+<table>
+<tr><td>Verified :</td><td><%= user.verified %></td></tr>
+<tr><td>Role :</td><td> <%= user.role %></td></tr>
+<tr><td>Created :</td><td> <%= short_date user.created_at %></td></tr>
+<tr><td>Logged In :</td><td> <%= time_ago_in_words user.logged_in_at rescue nil %> ago</td></tr>
+</table>
+
+<hr/>
+<%= link_to 'Show', :action => 'show', :id => user %><br/>
+<%= link_to 'Edit', :action => 'edit', :id => user %><br/>
+<%= link_to 'Destroy', { :action => 'destroy', :id => user }, :confirm => 'Are you sure?', :post => true %><br/>
+</div>

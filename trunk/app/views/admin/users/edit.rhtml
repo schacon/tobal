@@ -1,0 +1,12 @@
+<h1>Editing User</h1>
+
+<%= link_to 'Show', :action => 'show', :id => @user %> |
+<%= link_to 'Back', :action => 'list' %>
+
+<%= start_form_tag ({:action => 'update', :id => @user}, :multipart => true) %>
+  <%= submit_tag 'Edit' %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<%= end_form_tag %>
+
+

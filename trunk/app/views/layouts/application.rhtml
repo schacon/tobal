@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"  
+	"http://www.w3.org/TR/html4/strict.dtd"> 
+<html>
+<head>
+  <title>TOBAL <%= controller.controller_name.humanize %> <%= controller.action_name.humanize %></title>
+  <%= stylesheet_link_tag 'grids', 'fonts', 'scaffold', 'style' %>
+  <%= javascript_include_tag "prototype", "effects" %> 
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-82337-5";
+urchinTracker();
+</script>
+
+</head>
+<body class="<%= controller.controller_name + controller.action_name %> <%= controller.controller_name %>">
+       
+<div id="topbar">    
+  <div class="wrapper">
+	  <h1><a href="/">There Oughta Be A Law<small>.org</small></a></h1>                       
+	  <div id="nav">
+	  <ul id="account">
+	  <% if session['user'].nil? %>
+		<li><%= link_to 'Log In', :controller => 'user', :action => 'login' %></li>
+	  <% else %>
+	  	<li class="account"><%= link_to 'My Account', :controller => 'account', :action => 'view' %></li>
+	  	<li><%= link_to 'Log Out', :controller => 'user', :action => 'logout' %></li>
+	  <% end %>
+	  </ul>
+	  <ul>
+	    <li class="home"><a href="/">Home</a></li>
+	    <li class="bills"><a href="/bills/">Bills</a></li>
+	    <li class="legislators"><a href="/pages/legislators">Legislators</a></li>
+	    <li class="blog"><a href="/blog">Blog</a></li>
+	    <li class="about"><a href="/pages/about">About</a></li>
+      </ul>       
+	  </div> 
+  </div> 
+</div>   
+     
+<div id="info">
+<div class="wrapper">
+Connecting people to govern their government
+</div>
+</div>              
+            	                                                   
+
+<div id="doc" class="content yui-t7">
+   <div id="hd"></div> <!-- header -->
+
+   <div id="bd">    
+	<div class="yui-b">   
+		<div class="yui-main">
+		   	<%= render :partial => 'shared/notices' %>
+			<%= @content_for_layout %>
+		</div>
+	</div>
+   </div> <!-- body -->
+
+   <div id="ft">
+   	<div id="footer">
+		Site concept, design and code by <a href="http://jointheconversation.org">Scott Chacon</a><br/>
+		An <a href="http://osdproject.com">Open Source Democracy</a> Project<br/><br/>
+		<a href="http://osdproject.com"><img border="0" src="/images/osd-logo-sm.gif"></a><br/> 
+	</div>     
+   </div> <!-- footer -->
+</div>
+
+
+</body>
+</html>

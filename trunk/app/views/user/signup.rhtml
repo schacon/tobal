@@ -1,0 +1,14 @@
+<div title="<%= title_helper %>" class="form">
+  <%= head_helper :error => true %>
+
+  <div class="form-padding">
+    <%= start_form_tag_helper %>
+      <%= render_partial 'edit', :user => @user, :submit => false %></br>
+      <%= render_partial 'password', :submit => false %>
+      
+      <div class="button-bar">
+        <%= button_helper 'signup' %>
+      </div>
+    <%= end_form_tag %>
+  </div>
+</div>
