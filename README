@@ -1,0 +1,38 @@
+== ThereOughtaBeALaw ==
+
+This is a simple Rails based web app to allow communities 
+to suggest and build online bills they would like to become 
+laws.  
+
+It is a collaborative bill writing website, where people can 
+enter ideas they think should be laws. Anyone else can then 
+suggest changes (that the author can accept or reject), tag 
+the bills, comment on them, sponsor them, share them with 
+friends, etc.
+
+== Installation ==
+
+1. edit config/database.yml
+
+2. create the database : 
+	$ mysqladmin [user/pass info] create tobal_dev
+
+3. load the initial schema
+	$ rake db:schema:load
+
+4. migrate the database - this loads the admin user
+	$ rake migrate
+	
+5. start the app
+	$ ./script/server
+
+Now you can login as 'admin@admin.com' with password 'admin'.  
+
+That lets you access the http://localhost:3000/admin portion 
+of the site to enter blog entries.  Otherwise that user is the 
+same as any other user.
+
+== Authors ==
+
+ * Scott Chacon (schacon@gmail.com)
+

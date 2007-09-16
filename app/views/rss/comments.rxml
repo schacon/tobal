@@ -1,0 +1,22 @@
+xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8"
+xml.rss "version"=>"2.0", "xmlns:dc"=>"http://purl.org/dc/elements/1.1/" do
+  xml.channel do
+    xml.title "There Oughta Be A Law Comment feed"
+    xml.link "http://www.thereoughtabealaw.org"
+    xml.language "en-us"
+    xml.ttl "40"
+    xml.description "All comments on any bill in the TOBAL system"
+    
+    @comments.each do |comment| 
+      bill = Bill.find(comment.commentable_id)
+      
+      xml.item do
+        xml.title truncate(comment.name) + ' on ' + bill.current_version.title
+        xml.description comment.comment
+        xml.pubDate pub_date(comment.created_at)
+        xml.guid 'comment-c' + comment.id.to_s
+        xml.link server_url_for(:controller => "bill", :action => "show", :id => bill)
+      end
+    end
+  end
+end   

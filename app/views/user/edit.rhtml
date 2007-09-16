@@ -1,0 +1,20 @@
+<div title="<%= title_helper %>" class="form">
+  <%= head_helper :error => true %>
+
+    <%= start_form_tag_helper %>
+      <%= render_partial 'edit', :user => @user, :submit => true %>
+    <%= end_form_tag %>
+    </br>
+    <%= start_form_tag_helper %>
+      <%= render_partial 'password', :submit => true %>
+    <%= end_form_tag %>
+
+    <%= start_form_tag_helper %>
+      <div class="user_delete">
+        <%= form_input :hidden_field, 'form', :value => 'delete' %>
+    
+        <%= form_input :submit_button, 'delete_account' %>
+      </div>
+    <%= end_form_tag %>
+  </div>
+</div>

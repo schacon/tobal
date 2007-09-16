@@ -1,0 +1,21 @@
+<div id="admin-section">
+
+	<%= link_to 'Edit', :action => 'edit', :id => @article %><br/>
+	<%= link_to 'Destroy', { :action => 'destroy', :id => @article }, :confirm => 'Are you sure?', :post => true %><br/>
+	<%= link_to 'Back', :action => 'list' %><br/>
+</div>
+
+<hr/>
+
+<div id="article">
+	<div class="article-header">
+		<div class="date"><%= @article.created_at %></div>
+		<div class="title"><%= @article.title %></div>
+	</div>
+	<div class="article-author">
+		By <%= @article.user.name %>
+	</div>
+	<div class="article-content">
+		<%= textilize @article.content %>
+	</div>
+</div>

@@ -1,0 +1,121 @@
+<% cache :action => 'show', :id => @bill_id do %>
+
+<div class="yui-gc">  
+    
+	<div class="yui-u first">   <!-- MAIN -->     
+		
+		<div id="invite" class="info-box" style="display: none;">
+		  <%= start_form_tag :action => 'send_invites', :id => @bill %>
+		  <div class="titlesmall">Invite Others to Collaborate</div>
+		  Invite others to work on this bill with you, or to sponsor it.  Just type in their email addresses below and click the 'Send Invites' button to point them to this page.<br/>   
+		  <label>Email Addresses:</label>
+		  <%= text_area_tag 'invites', '', :rows => 8, :cols => 30 %><br/>
+		  <br/>
+		  <%= submit_tag 'Send Invites' %> or <a href="#" onClick="Effect.BlindUp('invite');">Cancel</a>
+		  <%= end_form_tag %>      
+		</div>  
+        
+		<div id="bill">
+			<div id="bill-options">
+			  <!-- <span><img src="/images/icons/script_save.png"> <%= link_to "Download", :action => :download, :id => @bill %></span> -->
+			  <span><img src="/images/icons/printer.png"> <%= link_to "Print", :action => :print, :id => @bill %></span>
+			</div>
+
+			<h1><%= @bill_version.title %></h1>      
+	
+			<div id="billtext">
+			  <%= bill_format @bill_version.billtext %>
+			</div> 
+        </div>
+         
+        <div class="versionbox">
+	    <small style="float:right;"><%= link_to 'view all', :action => 'show_versions', :id => @bill %></small> 
+	    Version <%= @bill_version.version %>
+	  	</div>   
+	    <% if @versions_pending && @versions_pending > 0%>
+	  	<div class="pendingbox">
+			<strong><%= @versions_pending %></strong> Versions Pending Approval
+	  	</div>                 
+	  	<% end %>  
+	
+		<%= render :partial => 'shared/comments', :locals => {:object => @bill, :comment => @comment} %>
+		<br clear="all"/>
+	</div>         
+	
+	<div class="yui-u">    
+	  
+	  <table id="billnav">
+		<tr><td width="40%" align="left">
+				<% if @bill.id > 1 %>
+					<%= link_to "&#171; Prev Bill", :action => 'show', :id => (@bill.id - 1) %>
+				<% end %>
+			</td> 
+            <td width="20%"> Bill #<%= @bill.id %> </td>
+			<td width="40%" align="right">
+				<% if @bill.id < @bill_count %>
+					<%= link_to "Next Bill &#187;", :action => 'show', :id => (@bill.id + 1) %>
+				<% end %>
+			</td></tr>
+	  </table>               
+   
+	  <h2 class="nicetitle">Participate</h2>
+		<ul class="simple">    
+			<li><img src="/images/icons/accept.png"> <%= link_to "Sponsor Bill", {:action => :sponsor, :id => @bill}, :confirm => "Are you sure you want to sponsor this bill?" %></li>
+			<!-- <li><img src="/images/icons/delete.png"> <%= link_to "Block Bill", :action => :block, :id => @bill %></li> -->
+		
+			<li><img src="/images/icons/script_edit.png"> <%= link_to "Change Bill", :action => :edit_bill, :id => @bill %></li>
+	  		<li><img src="/images/icons/email.png"> <a href="#" onClick="Effect.BlindDown('invite');">Invite Others</a></li>
+			<li><%= dl = digg_link(server_url_for(:controller => 'bills', :action => 'show', :id => @bill), @bill_version.title) %><%= digg_icon %></a>
+				<%= dl %>Digg this Bill</a></li>
+
+	    </ul>
+  
+	  <h2 class="nicetitle">Stay Updated</h2>      
+		<ul class="simple">
+	  		<li><img src="/images/icons/rss.png"> <%= link_to "Changes Feed", :controller => 'rss', :action => 'bill', :id => @bill %></li>
+	  		<li><img src="/images/icons/rss.png"> <%= link_to "Comments Feed", :controller => 'rss', :action => 'billcomments', :id => @bill %></li>
+	  		<!-- <li><img src="/images/icons/email_go.png"> Email Alerts</li> -->
+	    </ul>
+        
+
+	  <h2 class="nicetitle">Tags</h2> 
+	  <div class="options small">
+	  <a href="#" onClick="Toggle.display('add-tag'); Field.focus('tag_name'); return false;">
+		Add Tag</a>       
+	  </div>  
+   		<div id="add-tag" class="tagbox" style="display: none;">
+		<%= start_form_tag :action => 'add_tag', :id => @bill %>
+		  <%= text_field_with_auto_complete :tag, :name, :size => 20 %>
+		  <%= submit_tag 'Add Tag' %>
+		  <div class="small light">use a single word, no spaces (eg: 'taxes')</div>
+		<%= end_form_tag %>         
+	    </div>   
+  		<ul class="simple">
+			<% @bill.tags.each do |tag| %>
+				<li><img src="/images/icons/tag_blue.png"> 
+					<%= link_to tag.name, :action => 'list', :tag => tag.name %></li>
+			<% end %>
+		</ul>
+	
+	  <h2 class="nicetitle">People</h2>  
+	  <div class="subtitle">Authors</div> 
+   	  	<ul class="simple">		
+	  	<% @bill.contributors.each do |author| %>
+		  <li><%= author.name %></li>
+	    <% end %>           
+	    </ul>
+
+	  <% if !@bill.sponsors.empty? %>
+	  	<div class="subtitle">Sponsors</div>
+		  <ul class="simple">
+		  <% @bill.sponsors.each do |sponsor| %>
+			<li><%= sponsor.name %></li>
+		  <% end %>                     
+		  </ul>
+	  <% end %>
+
+	</div>        
+
+</div>
+    
+<% end %>

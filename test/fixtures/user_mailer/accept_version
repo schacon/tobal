@@ -1,0 +1,3 @@
+UserMailer#accept_version
+
+Find me in app/views/user_mailer/accept_version.rhtml

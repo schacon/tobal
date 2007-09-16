@@ -1,0 +1,53 @@
+<%= error_messages_for 'user' %>
+
+<!--[form:user]-->
+<table>
+<tr><td valign="top">
+
+	<p><label for="user_login">Login</label><br/>
+	<%= text_field 'user', 'login'  %></p>
+
+	<p><label for="user_email">Email</label><br/>
+	<%= text_field 'user', 'email'  %></p>
+
+	<p><label for="user_firstname">Firstname</label><br/>
+	<%= text_field 'user', 'firstname'  %></p>
+
+	<p><label for="user_lastname">Lastname</label><br/>
+	<%= text_field 'user', 'lastname'  %></p>
+
+	<p><label for="user_verified">Verified</label><br/>
+	<%= check_box 'user', 'verified'  %></p>
+
+	<p><label for="user_role">Role</label><br/>
+	<%= select 'user', 'role', ['', 'admin', 'author', 'guest']  %></p>
+
+	<p><label for="user_deleted">Deleted</label><br/>
+	<%= check_box 'user', 'deleted'  %></p>
+
+	<p><label for="user_delete_after">Delete after</label><br/>
+	<%= datetime_select 'user', 'delete_after'  %></p>
+
+</td><td valign="top">
+
+	<p><label for="user_image_small">Image Small</label><br/>
+	<%= file_column_field 'user', 'image_small'  %></p>
+	<%= image_tag_n url_for_file_column("user", "image_small") %>	
+
+	<p><label for="user_bio_short">Short Bio</label><br/>
+	<%= text_area 'user', 'bio_short', :rows => 10  %></p>
+		
+				
+</td><td valign="top">
+	
+	<p><label for="user_image_large">Image Large</label><br/>
+	<%= file_column_field 'user', 'image_large'  %></p>
+	<%= image_tag_n url_for_file_column("user", "image_large") %>		
+
+	<p><label for="user_bio_long">Long Bio</label><br/>
+	<%= text_area 'user', 'bio_long'  %></p>
+	
+</td></tr>
+</table>
+<!--[eoform:user]-->
+

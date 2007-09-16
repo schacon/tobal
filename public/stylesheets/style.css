@@ -1,0 +1,511 @@
+body {
+  background: #fff;
+  margin: 0;
+  padding: 0;  
+  font-family: "Lucida Grande", arial, sans-serif;
+}   
+  
+.header {
+  padding: 2px;
+  border-bottom: 2px solid #696;
+}              
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.titlesmall {
+  font-size: 15px;
+  font-weight: bold;
+}      
+#topbar {
+  border-bottom:  1px solid #aaa;
+  background: #eee;
+  text-align: left;
+  padding: 1px 8px; 
+  min-height: 50px;
+}
+#topbar h1 {
+  float: left;  
+  margin: 0;
+  padding: 0; 
+  margin-top: 10px;  
+  letter-spacing: -1px;
+}                    
+#topbar h1 small {
+  color: #999;
+}                   
+#topbar h1 a {   
+    color: #494 !important;
+	text-decoration: none;
+}
+
+#nav {
+  text-align: right;   
+  padding: 3px;
+  margin: 0;
+}
+#nav ul {
+  white-space : nowrap;
+  padding: 0;
+  margin: 0;
+  margin-top: 5px;  
+}
+#nav ul li {
+  display: inline; 
+  padding: 2px;
+  font-size: 110%;
+}  
+#nav a { color: #444; }
+#nav #account a { color: #484; }  
+        
+.wrapper {
+  width: 785px;
+  margin: auto; 
+  padding: 0;	
+}           
+
+#info {
+	background: #cfc;
+	border-bottom: 1px solid #aea;
+	padding: 3px;   
+	color: #464;  
+	text-align: left;
+}
+   
+.content { }   
+.print {
+	width: 780px;
+	padding: 10px;
+	background: #fff;
+} 
+.small {
+	font-size: 80%;
+}          
+#mainmenu {
+  float: right;
+}          
+        
+/* TABS FORMATTING */
+
+.account ul li.account a { font-weight: bold;}
+.pagesindex ul li.home a { font-weight: bold;}
+.pageslegislators ul li.legislators a { font-weight: bold;}
+.pagesabout ul li.about a { font-weight: bold;}
+.content ul li.blog a { font-weight: bold;}
+.bills ul li.bills a { font-weight: bold;}
+
+/* END TABS FORMATTING */
+       
+.block h2 {  
+	margin: 0;
+	padding: 0; 
+}                        
+.block p {
+	margin-top: 3px;
+}
+.block {
+	margin: 15px 0;
+} 
+
+.intro {
+	background: #ffb;
+	border: 2px solid #aa6;   
+	padding: 3px;
+	margin-bottom: 5px;  
+}    
+.intro p {
+	margin: 5px;
+	padding: 0;
+	font-size: 90%;
+}                     
+.intro h2 {  
+	color: #661;
+	margin: 0;  
+}
+#introvideo {
+	text-align: center;
+	padding: 5px;
+}
+
+table#login-form {
+	margin: 30px;            
+	margin-bottom: 50px;
+	padding: 20px;
+	border: 5px solid #aaa;       
+}    
+table#login-form tr td {
+	padding: 8px;
+} 
+    
+ul.simple {
+	list-style: none;
+	margin: 5px;
+	padding: 5px;
+}     
+ul.simple li {
+	padding: 3px 0;
+}
+     
+#maincontent {
+  width: 480px;
+  border-right: 1px dashed #ddd;
+  padding: 0px 8px;
+}
+#sidebar {
+  float: right;
+  width: 275px;
+}
+#footer {
+	width: 80%;
+	margin: auto;             
+	margin-top: 15px;
+	text-align: center;
+	border-top: 1px solid #eee; 
+	padding: 8px;
+}          
+
+#pagecontent {
+  width: 580px;
+  border-right: 1px dashed #ddd;
+  padding: 0px 8px;
+}                    
+#pagesidebar {
+  float: right;
+  width: 175px;
+} 
+.light {
+	color: #777;
+}             
+.infobox {
+  padding: 8px;
+  background: #eee;
+  border: 3px solid #ddd; 
+}           
+
+.bigbutton {
+  margin: auto;
+  margin-bottom: 5px;
+  padding: 4px;
+  border: 2px solid #494;
+  background: #7c7; 
+  text-align: center;
+}
+.bigbutton a {
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+}
+.versionbox {
+  padding: 3px;
+  margin: 0;
+  background: #eee;
+  font-size: 90%;
+  color: #888;
+}       
+.pendingbox {
+	border-top: 0;  
+	padding: 2px;
+	background: #ffc;
+	font-size: 10px;
+	text-align: center;
+}
+.topright {
+  float: right;
+}       
+
+#bill h1 {
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+}
+#billtext {
+  padding: 8px;      
+  padding-top: 2px;
+  margin: 5px 0px;
+}
+#bill-options {
+	float: right;
+}
+  
+.info-box {
+  border: 1px solid #ddd;
+  background: #efefef;
+  margin: 8px 0px;
+  padding: 3px;
+} 
+                  
+.nicetitle {        
+	padding: 2px 0;
+	color: #44f;                    
+	border-bottom: 1px solid #44f;
+	margin-bottom: 8px;
+} 
+.nicetitle small {
+	font-size: 10px;
+	font-weight: normal;
+	color: #666;
+	padding: 0 5px;
+}
+.simpletitle {        
+	padding: 2px 0;
+	color: #696;
+	border-bottom: 1px solid #696;  
+	margin-bottom: 8px;
+}  
+.subtitle {
+	padding: 2px 0;
+	color: #444;
+	font-size: 110%;
+	font-weight: bold;
+	border-bottom: 1px solid #eee;
+}                                 
+div.textbox {
+	padding: 0 8px;
+} 
+
+table#billnav {
+	width: 100%;            
+	background: #f5f5f5;
+	border-bottom: 1px solid #ccc;
+}                            
+table#billnav tr td {
+	font-size: 80%;
+}
+
+del.diffmod {
+	background: #eee;
+	color:  #999; 
+}
+del.diffdel {
+	background: #fbb;
+	color:  #988;
+} 
+del.diffmod p, del.diffdel p {
+	background: #fbb !important;
+	color:  #988;
+}   
+ins.diffmod, ins.diffins {
+	background: #bfb;    
+	text-decoration: none;
+}                        
+ins.diffmod p, ins.diffins p {
+	background: #bfb;    
+	text-decoration: none;
+}  
+div.options {
+	float: right;
+}   
+/* TAB NAV BEGIN */
+
+ul#tabnav {
+font: normal 11px verdana, arial, sans-serif;
+list-style-type: none;
+padding-bottom: 24px;
+border-bottom: 1px solid #6c6;
+margin: 0;
+}
+
+ul#tabnav li {
+float: left;
+height: 21px;
+background-color: #cfc;
+margin: 2px 2px 0 2px;
+border: 1px solid #6c6; 
+padding: 0 10px;
+}
+
+ul#tabnav li.selected {
+border-bottom: 1px solid #fff;
+background-color: #fff;
+}
+
+li.selected a {
+color: #000;
+}
+
+#tabnav a {
+float: left;
+display: block;
+color: #666;
+text-decoration: none;
+padding: 4px;
+}
+
+#tabnav a:hover {
+background: #fff;
+}
+            
+/* TAB NAV END */
+                           
+.notice {
+	background: #afa;
+	color: #363;
+	border: 2px solid #363; 
+	margin: 5px;
+	padding: 5px;
+}              
+.error {
+	background: #faa;
+	color: #633;
+	border: 2px solid #633;
+	margin: 5px;
+	padding: 5px;
+}              
+.warning {
+	background: #ffa;
+	color: #663;
+	border: 2px solid #663;
+	margin: 5px;
+	padding: 5px;
+}  
+        
+table.accountview tr td {
+	padding: 0 10px;
+}   
+table.short tr td {
+	margin: 0;
+	padding: 0;
+}  
+table#billversions tr.rejected td {	color: #bbb; } 
+table#billversions tr.rejected td a {	color: #bbb; } 
+table#billversions tr.accepted td {	color: #363; } 
+table#billversions tr.accepted td a {	color: #363; } 
+
+.measurebar {
+    background: #fff; 
+	border: 1px solid #ccc;
+	width: 100px;
+	height: 10px;
+	padding: 1px;
+}
+.measurebar .measure {
+	background: #afa;
+	height: 10px;
+}      
+
+/* -- BLOG ARTICLE STYLES -- */
+.article {
+	padding: 5px 0;
+}
+.article .article-header {
+	margin: 0;
+}
+.article .article-header a {
+	text-decoration: none;
+	color: #393 !important;
+}
+.article .article-header .title {
+	font-size: 150%;
+	border-bottom: 2px solid #aaa;
+}
+.article .article-header .subtitle {
+	color: #888;
+}
+.article .article-header .date {
+	float: right;
+}
+.article .article-content {   
+	padding:  10px;
+	margin: 0;
+	color: #555;
+}
+.article .article-content p {
+}
+/* -- END BLOG ARTICLE STYLES -- */
+
+/* -- SUMMARY STYLES -- */
+
+.summary {
+	padding: 5px;
+}
+.summary h2 {
+	border-bottom: 1px solid #aaa;
+}
+.summary h2 a {
+	text-decoration: none;
+  	color: #393 !important;
+}
+.summary .date {
+	float: right;
+	color: #666;
+}   
+.summary .meta {
+	text-align: center;
+	border-top: 1px dotted #eee;
+	width: 80%;
+	margin: auto;       
+	padding: 4px;
+}
+.preview-text {
+	color: #555;
+	padding: 0 10px;
+}
+
+#search-box {
+	padding: 10px 3px;
+	margin-bottom: 10px;
+}
+/* -- SUMMARY STYLES END -- */
+
+/* -- COMMENTS START -- */
+#comments {
+	padding: 5px;
+}
+#comments, .comment-add {
+	margin-top: 10px;
+}
+.comment-add {
+	background: #eee;
+	padding: 5px;
+}
+.comment-add h2 {
+	color: #555 !important;
+	border-bottom: 0 !important;
+}
+#comments .comment {
+	padding: 5px;
+	border-bottom: 1px solid #eee;
+}
+#comments .comment .comment-date { 
+	color: #666;
+	display: inline;
+}
+#comments .comment .comment-date-words { 
+	color: #888;
+	display: inline;
+	font-size: 80%;
+}
+#comments .comment .author {
+	display: inline;
+}
+#comments .comment .comment-text {
+	padding: 10px 0;
+	margin-left: 10px;
+	color: #444;
+}
+
+#comments h2 {
+	margin-bottom: 4px;
+}
+table.comment {
+	font-size: 90%;
+}
+table.comment th {
+	text-align: left;
+}
+/* -- COMMENTS END -- */
+     
+.searchbar {
+	background: #eee;
+	border-bottom: 1px solid #aaa;
+	padding: 10px; 
+	text-align: center;
+}                 
+.searchbar h2 {
+	display: inline;
+}        
+.searchbar form {
+	display: inline;
+	margin: 0;
+}
+
+.highlight   { background: #ff7;}            
