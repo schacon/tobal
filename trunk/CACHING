@@ -6,6 +6,9 @@ pages/index
     - bills.create
     - bills.sponsor
     - account.accept
+    - bills.create
+    - bills.sponsor
+    - account.accept
 
 bills/show
   expires fragment:   
