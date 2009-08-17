@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"  
+	"http://www.w3.org/TR/html4/strict.dtd"> 
+<html>
+<head>
+  <title>TOBAL <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'grids', 'fonts', 'scaffold', 'style' %>
+  <%= javascript_include_tag "prototype", "effects" %> 
+</head>
+<body>
+          
+<div id="topbar">    
+  <div class="wrapper">
+	  <h1><a href="/">There Oughta Be A Law<small>.org</small></a></h1>                       
+  </div> 
+</div>   
+     
+<div id="info">
+<div class="wrapper">
+Connecting people to govern their government
+</div>
+</div>              
+            	                                                   
+
+<div id="doc" class="content yui-t7">
+   <div id="hd"></div> <!-- header -->
+
+   <div id="bd">    
+	<div class="yui-b">   
+		<div class="yui-main">
+		   	<%= render :partial => 'shared/notices' %>
+			<%= @content_for_layout %>
+		</div>
+	</div>
+   </div> <!-- body -->
+
+   <div id="ft">
+   	<div id="footer">
+		Site concept, design and code by <a href="http://jointheconversation.org">Scott Chacon</a><br/>
+		Software Version: 1.0
+	</div>     
+   </div> <!-- footer -->
+</div>
+
+
+</body>
+</html> 

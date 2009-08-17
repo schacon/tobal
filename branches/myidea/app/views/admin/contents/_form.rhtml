@@ -1,0 +1,28 @@
+<%= error_messages_for 'content' %>
+
+<!--[form:content]-->
+<table>
+<tr><td valign="top">
+	
+	<p><label for="content_title">Title</label><br/>
+	<%= text_field 'content', 'title'  %></p> 
+	
+	<p><label for="content_tags">Tags</label><br/>
+	<%= text_area 'tags', 'tag_string', :rows => 3, :value => @content.tag_list.gsub("'", '"')  %></p>
+
+	<p><label for="content_created_at">Created at</label><br/>
+	<%= datetime_select 'content', 'created_at'  %></p>
+
+	<p><label for="content_published_flag">Published</label><br/>
+	<%= check_box 'content', 'published_flag'  %></p>
+
+</td><td valign="top">
+	
+	<p><label for="content_content">Content</label><br/>
+	<%= text_area 'content', 'content', :rows => 25, :cols => 60  %></p>
+
+</td></tr>
+</table>
+
+<!--[eoform:content]-->
+

@@ -1,0 +1,25 @@
+Cached Pages
+--------------------------
+
+pages/index                  
+  expires action:
+    - bills.create
+    - bills.sponsor
+    - account.accept
+    - bills.create
+    - bills.sponsor
+    - account.accept
+
+bills/show
+  expires fragment:   
+    - bills.create
+    - bills.sponsor
+	- bills.add_comment
+	- bills.add_tag   
+	- bills.update
+	- account.accept
+	
+pages/legislators
+pages/about     
+ 
+blog ??

@@ -1,0 +1,11 @@
+You have been invited to help <%= @name %> with a bill titled
+"<%= @bill_name %>" on the citizen legislation website ThereOughtaBeALaw.org.<br/>
+<br/>                             
+You can see the bill here :<br/>
+<% url = "http://www.thereoughtabealaw.org/bills/show/#{@bill_id}" %>
+<%= "<a href=\"#{url}\">#{url}</a>" %><br/>
+<br/>           
+Bill Text :<br/>
+<%= @billtext %><br/>
+<br/>        
+<%= render :partial => './footer' %>

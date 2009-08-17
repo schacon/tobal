@@ -1,0 +1,12 @@
+A suggestion has been made to improve your "<%= @bill.title %>" bill at 
+ThereOughtaBeALaw.org.  Please visit your account to approve or reject the 
+change.<br/>
+<br/>                             
+You can see the bill here :<br/>
+<% url = "http://www.thereoughtabealaw.org/bills/show/#{@bill.bill_id}" %>
+<%= "<a href=\"#{url}\">#{url}</a>" %><br/>
+<br/>
+New Bill Text :<br/>
+<%= @bill.billtext %><br/>
+<br/>        
+<%= render :partial => './footer' %>   
