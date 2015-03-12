@@ -1,0 +1,3 @@
+This is the Rails application source code for running thereoughtabealaw.org.  It allows people to sign up for accounts, propose laws or bills, co-sponsor ones they like, leave comments, propose modifications and more.
+
+It is meant for organizations or politicians who want to get their constituents more involved in the political process.  I'm open sourcing it to encourage campaigns to run their own version of it and possibly contribute back to the project.
